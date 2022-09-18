@@ -2,7 +2,10 @@ const API_URL = 'https://restcountries.com/v3.1/all';
 
 
 const renderCountriesList = (countriesList) => {
-    
+    const listElement = document.createElement('ul');
+    countriesList.forEach((country) => {
+        listElement.appendChild(countryElement(country))
+    })
 } 
 
 const fetchData = async () => {
