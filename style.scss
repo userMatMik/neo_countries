@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+
+/* Variables */
+$bg-clr: #ecf0f3;
+$font-clr: #555;
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Utilities */
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: .875rem;
+    color: $font-clr;
+    background-color: $bg-clr;
+}
+
+.header {
+    border-radius: 0 0 10px 10px;
+    padding-block: 1rem;
+    background: #ecf0f3;
+    -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+
+
+    // box-shadow: inset -8px -8px 15px #bfc2c5,
+    //             inset 8px 8px 15px #ffffff;
+
+
+
+
+    &__container {
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+
+}
+
+main {
+    max-width: 1280px;
+    margin: 0 auto;
+    
+    ul {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+
+        li {
+
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: #ecf0f3;
+            -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+            box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+            
+            // background-color: $bg-clr;
+            // border-radius: 10px;
+            // box-shadow: 13px 13px 20px #cbced1,
+            //             -13px -13px 20px #ffffff;
+            overflow: hidden;
+
+            img {
+                aspect-ratio: 160/98;
+                width: 100%;
+            }
+
+            a {
+                color: $font-clr;
+                text-decoration: none;
+                
+            }
+        }
+    }
+    
+}
+
+.info-container {
+    padding: 2rem 1.2rem;
+}
+
+.country-name {
+    font-size: 1.2rem;
+    margin-bottom: .7rem;
+
+}

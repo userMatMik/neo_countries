@@ -1,1 +1,85 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+/* Variables */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Utilities */
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: .875rem;
+  color: #555;
+  background-color: #ecf0f3;
+}
+
+.header {
+  border-radius: 0 0 10px 10px;
+  padding-block: 1rem;
+  background: #ecf0f3;
+  -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+  box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+}
+
+.header__container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+main {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+main ul {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+main ul li {
+  border-radius: 10px;
+  background: #ecf0f3;
+  -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+  box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+  overflow: hidden;
+}
+
+main ul li img {
+  aspect-ratio: 160/98;
+  width: 100%;
+}
+
+main ul li a {
+  color: #555;
+  text-decoration: none;
+}
+
+.info-container {
+  padding: 2rem 1.2rem;
+}
+
+.country-name {
+  font-size: 1.2rem;
+  margin-bottom: .7rem;
+}
+/*# sourceMappingURL=style.css.map */

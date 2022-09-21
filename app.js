@@ -21,12 +21,15 @@ const createInfoContainer = (country) => {
 
     const countryNameElement = document.createElement('h2');
     countryNameElement.innerText = country.name
+    countryNameElement.classList.add('country-name')
 
     infoContainerElement.appendChild(countryNameElement);
 
     infoContainerElement.appendChild(createInfoElement("Capital", country.capital));
     infoContainerElement.appendChild(createInfoElement("Region", country.region));
     infoContainerElement.appendChild(createInfoElement("Population", country.population));
+
+    infoContainerElement.classList.add('info-container');
 
 
     return infoContainerElement;
@@ -52,8 +55,10 @@ const createCountryElement = (country) => {
     
     linkElement.appendChild(createFlagElement(country))
 
+    linkElement.appendChild(createInfoContainer(country));
+
     countryElement.appendChild(linkElement);
-    countryElement.appendChild(createInfoContainer(country));
+    // countryElement.appendChild(createInfoContainer(country));
 
     return countryElement
 }
