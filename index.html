@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
     <title>Neo countries app</title>
 </head>
 <body>
@@ -16,7 +16,10 @@
         </div>
     </header>
     <div class="filters">
-        <input type="text" id="query" placeholder="Search for a country" />
+        <div class="search"> 
+            <ion-icon name="search" class="search__icon"></ion-icon>
+            <input type="text" id="search-input" placeholder="Search for a country" />
+        </div>
         <select name="region" id="region">
             <option value="">Filter by region</option>
             <option value="Europe">Europe</option>
@@ -27,5 +30,8 @@
         </select>
     </div>
     <main id="main"></main>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 </html>

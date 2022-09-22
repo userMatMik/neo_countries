@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;500;700&display=swap');
 
 /* Variables */
 $bg-clr: #ecf0f3;
@@ -39,15 +39,10 @@ body {
     border-radius: 0 0 10px 10px;
     padding-block: 1rem;
     background: #ecf0f3;
-    -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-
-
-    // box-shadow: inset -8px -8px 15px #bfc2c5,
-    //             inset 8px 8px 15px #ffffff;
-
-
-
+    // -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+    // box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+    box-shadow: 3px 3px 7px #bfc2c5,
+        -3px -3px 7px #ffffff;
 
     &__container {
         max-width: 1280px;
@@ -61,9 +56,13 @@ main {
     margin: 0 auto;
     
     ul {
+        margin: 0;
+        padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
+        list-style: none;
+        
 
         li {
 
@@ -78,6 +77,9 @@ main {
             // box-shadow: 13px 13px 20px #cbced1,
             //             -13px -13px 20px #ffffff;
             overflow: hidden;
+            list-style: none;
+
+            
 
             img {
                 aspect-ratio: 160/98;
@@ -86,8 +88,7 @@ main {
 
             a {
                 color: $font-clr;
-                text-decoration: none;
-                
+                text-decoration: none; 
             }
         }
     }
@@ -102,4 +103,43 @@ main {
     font-size: 1.2rem;
     margin-bottom: .7rem;
 
+}
+
+.filters { 
+    display: flex;
+    justify-content: space-between;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding-block: 2rem;
+
+    input[type=text] {
+        border: none;
+        outline:none;
+        background: none;
+        font-family: inherit;
+        font-size: 1rem;
+        font-weight: 500;
+        color: $font-clr;
+        padding:10px 25px;
+        border-radius: 10px;
+        // box-shadow: inset 3px 3px 7px #bfc2c5,
+        // inset -3px -3px 7px #ffffff;
+        box-shadow: 3px 3px 7px #bfc2c5,
+        -3px -3px 7px #ffffff;
+
+        &::placeholder {
+            color: #bfc2c5;
+        }
+    }
+
+    .search {
+        position: relative;
+        
+        &__icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+        }
+    }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;500;700&display=swap");
 /* Variables */
 /* Box sizing rules */
 *,
@@ -34,8 +34,8 @@ body {
   border-radius: 0 0 10px 10px;
   padding-block: 1rem;
   background: #ecf0f3;
-  -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-  box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
 }
 
 .header__container {
@@ -49,11 +49,14 @@ main {
 }
 
 main ul {
+  margin: 0;
+  padding: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[4];
       grid-template-columns: repeat(4, 1fr);
   gap: 3rem;
+  list-style: none;
 }
 
 main ul li {
@@ -62,6 +65,7 @@ main ul li {
   -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
   box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
   overflow: hidden;
+  list-style: none;
 }
 
 main ul li img {
@@ -81,5 +85,59 @@ main ul li a {
 .country-name {
   font-size: 1.2rem;
   margin-bottom: .7rem;
+}
+
+.filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-block: 2rem;
+}
+
+.filters input[type=text] {
+  border: none;
+  outline: none;
+  background: none;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #555;
+  padding: 10px 25px;
+  border-radius: 10px;
+  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+}
+
+.filters input[type=text]::-webkit-input-placeholder {
+  color: #bfc2c5;
+}
+
+.filters input[type=text]:-ms-input-placeholder {
+  color: #bfc2c5;
+}
+
+.filters input[type=text]::-ms-input-placeholder {
+  color: #bfc2c5;
+}
+
+.filters input[type=text]::placeholder {
+  color: #bfc2c5;
+}
+
+.filters .search {
+  position: relative;
+}
+
+.filters .search__icon {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 5px;
 }
 /*# sourceMappingURL=style.css.map */

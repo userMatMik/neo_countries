@@ -1,4 +1,6 @@
 const API_URL = 'https://restcountries.com/v3.1/all';
+let countriesList;
+
 
 
 const createInfoElement = (str, value) => {
@@ -74,6 +76,7 @@ const createCountriesList = (countriesList) => {
 
 const renderCountriesList = (countriesList) => {
     const mainElement = document.querySelector('#main');
+    mainElement.innerHTML = "";
     mainElement.appendChild(createCountriesList(countriesList));
 }
 
@@ -81,7 +84,7 @@ const fetchData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
     // console.log(data)
-    const countriesList = data.map((country) => {
+    countriesList = data.map((country) => {
         return {
             name: country.name.common,
             capital: country.capital,
@@ -94,5 +97,16 @@ const fetchData = async () => {
     
     renderCountriesList(countriesList);
 };
+
+//handle input
+document.querySelector("#search-input").addEventListener('input', (event)=> {
+    let searchedQuerry = event.target.value.toLowerCase();
+    
+    const searchedCountries = countriesList.filter((country) => {
+        return country.name.toLowerCase().includes(searchedQuerry)
+    })
+
+    renderCountriesList(searchedCountries)
+})
 
 fetchData();
