@@ -20,14 +20,29 @@
             <ion-icon name="search" class="search__icon"></ion-icon>
             <input type="text" id="search-input" placeholder="Search for a country" />
         </div>
-        <select name="region" id="region">
+        <div class="select">
+            <div class="select__header">
+                <span class="select__holder">Filter by region</span>
+                <div class="select__btn">
+                    <ion-icon name="chevron-down-outline"></ion-icon>
+                </div>
+            </div>
+            <div class="select__options">
+                <div class="select__option">Africa</div>
+                <div class="select__option option-selected">America</div>
+                <div class="select__option">Asia</div>
+                <div class="select__option">Europe</div>
+                <div class="select__option">Oceania</div>
+            </div>
+        </div>
+        <!-- <select name="region" id="region">
             <option value="">Filter by region</option>
             <option value="Europe">Europe</option>
             <option value="Americas">Americas</option>
             <option value="Asia">Asia</option>
             <option value="Africa">Africa</option>
             <option value="Oceania">Oceania</option>
-        </select>
+        </select> -->
     </div>
     <main id="main"></main>
 
