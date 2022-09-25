@@ -1,8 +1,6 @@
 const API_URL = 'https://restcountries.com/v3.1/all';
 let countriesList;
 
-
-
 const createInfoElement = (str, value) => {
     const infoDivElement =  document.createElement('div');
     

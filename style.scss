@@ -177,7 +177,7 @@ main {
 
     &__options {
         position: absolute;
-        display: grid;
+        display: none;
         gap: 10px;
         padding: 10px 25px;
         text-align: left;
@@ -192,6 +192,7 @@ main {
     &__option {
         border-radius: 3px;
         padding: 8px 10px;
+        cursor: pointer;
         // box-shadow: 3px 3px 7px #bfc2c5,
         // -3px -3px 7px #ffffff;
     }
@@ -199,9 +200,12 @@ main {
     
 }
 
+.options-visible {
+    display: grid;
+}
+
 .option-selected {
-    // border: 1px solid red;
     box-shadow: inset 3px 3px 7px #bfc2c5,
-        inset -3px -3px 7px #ffffff;
+                inset -3px -3px 7px #ffffff;
         
 }

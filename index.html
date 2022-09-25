@@ -5,7 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="app.js" defer></script>
+    <script type="module" src="app.js" defer></script>
+    <script type="module" src="handle_select.js" defer></script>
+
     <title>Neo countries app</title>
 </head>
 <body>
@@ -21,13 +23,13 @@
             <input type="text" id="search-input" placeholder="Search for a country" />
         </div>
         <div class="select">
-            <div class="select__header">
+            <div id="select-btn"  class="select__header">
                 <span class="select__holder">Filter by region</span>
                 <div class="select__btn">
                     <ion-icon name="chevron-down-outline"></ion-icon>
                 </div>
             </div>
-            <div class="select__options">
+            <div id="select-options" class="select__options">
                 <div class="select__option">Africa</div>
                 <div class="select__option option-selected">America</div>
                 <div class="select__option">Asia</div>
@@ -35,14 +37,6 @@
                 <div class="select__option">Oceania</div>
             </div>
         </div>
-        <!-- <select name="region" id="region">
-            <option value="">Filter by region</option>
-            <option value="Europe">Europe</option>
-            <option value="Americas">Americas</option>
-            <option value="Asia">Asia</option>
-            <option value="Africa">Africa</option>
-            <option value="Oceania">Oceania</option>
-        </select> -->
     </div>
     <main id="main"></main>
 
