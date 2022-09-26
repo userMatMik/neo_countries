@@ -1,5 +1,5 @@
 const API_URL = 'https://restcountries.com/v3.1/all';
-let countriesList;
+export let countriesList;
 
 const createInfoElement = (str, value) => {
     const infoDivElement =  document.createElement('div');
@@ -27,7 +27,7 @@ const createInfoContainer = (country) => {
 
     infoContainerElement.appendChild(createInfoElement("Capital", country.capital));
     infoContainerElement.appendChild(createInfoElement("Region", country.region));
-    infoContainerElement.appendChild(createInfoElement("Population", country.population));
+    infoContainerElement.appendChild(createInfoElement("Population", country.population.toLocaleString()));
 
     infoContainerElement.classList.add('info-container');
 
@@ -72,7 +72,7 @@ const createCountriesList = (countriesList) => {
     return listElement;
 }
 
-const renderCountriesList = (countriesList) => {
+export const renderCountriesList = (countriesList) => {
     const mainElement = document.querySelector('#main');
     mainElement.innerHTML = "";
     mainElement.appendChild(createCountriesList(countriesList));
