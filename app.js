@@ -96,15 +96,6 @@ const fetchData = async () => {
     renderCountriesList(countriesList);
 };
 
-//handle input
-document.querySelector("#search-input").addEventListener('input', (event)=> {
-    let searchedQuerry = event.target.value.toLowerCase();
-    
-    const searchedCountries = countriesList.filter((country) => {
-        return country.name.toLowerCase().includes(searchedQuerry)
-    })
 
-    renderCountriesList(searchedCountries)
-})
 
 fetchData();
