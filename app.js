@@ -1,83 +1,12 @@
-const API_URL = 'https://restcountries.com/v3.1/all';
+import { renderCountriesList } from "./dom-create-elements.js";
+import { renderCountryDetails } from "./dom-create-elements.js";
+
 export let countriesList;
+export let countryData;
 
-const createInfoElement = (str, value) => {
-    const infoDivElement =  document.createElement('div');
-    
-    const labelElement = document.createElement('strong');
-    labelElement.innerText = `${str}: `;
+console.log(window.location.search)
 
-    const valueElement = document.createElement('span');
-    valueElement.innerText = value;
-
-    infoDivElement.appendChild(labelElement);
-    infoDivElement.appendChild(valueElement);
-
-    return infoDivElement;
-}
-
-const createInfoContainer = (country) => {
-    const infoContainerElement = document.createElement('div');
-
-    const countryNameElement = document.createElement('h2');
-    countryNameElement.innerText = country.name
-    countryNameElement.classList.add('country-name')
-
-    infoContainerElement.appendChild(countryNameElement);
-
-    infoContainerElement.appendChild(createInfoElement("Capital", country.capital));
-    infoContainerElement.appendChild(createInfoElement("Region", country.region));
-    infoContainerElement.appendChild(createInfoElement("Population", country.population.toLocaleString()));
-
-    infoContainerElement.classList.add('info-container');
-
-
-    return infoContainerElement;
-}
-
-const createFlagElement = (country) => {
-    const flagContainerElement = document.createElement('div');
-    const flagImgElement = document.createElement('img');
-
-    flagImgElement.src = country.flagUrl;
-    flagImgElement.alt = `${country.name} flag`;
-
-    flagContainerElement.appendChild(flagImgElement);
-
-    return flagContainerElement;
-}
-
-const createCountryElement = (country) => {
-    const countryElement = document.createElement('li');
-    
-    const linkElement = document.createElement('a');
-    linkElement.href = `?country=${country.countryID}`
-    
-    linkElement.appendChild(createFlagElement(country))
-
-    linkElement.appendChild(createInfoContainer(country));
-
-    countryElement.appendChild(linkElement);
-    // countryElement.appendChild(createInfoContainer(country));
-
-    return countryElement
-}
-
-const createCountriesList = (countriesList) => {
-    const listElement = document.createElement('ul');
-    // console.log(countriesList)
-    countriesList.forEach((country) => {
-        listElement.appendChild(createCountryElement(country))
-    })
-    return listElement;
-}
-
-export const renderCountriesList = (countriesList) => {
-    const mainElement = document.querySelector('#main');
-    mainElement.innerHTML = "";
-    mainElement.appendChild(createCountriesList(countriesList));
-}
-
+const API_URL = "https://restcountries.com/v3.1/all";
 const fetchData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
@@ -96,6 +25,35 @@ const fetchData = async () => {
     renderCountriesList(countriesList);
 };
 
+const getCountryDetails = async () => {
 
+    const searchParams = new URLSearchParams(window.location.search);
+    const countryCode = searchParams.get("country");
 
-fetchData();
+    const API_URL_DETAILS = `https://restcountries.com/v3.1/alpha/${countryCode}`
+    const response = await fetch(API_URL_DETAILS);
+    const data = await response.json();
+    countryData = data.map((country) => {
+        return {
+            name: country.name.common,
+            flagUrl: country.flags.png,
+            population: country.population,
+            region: country.region,
+            subregion: country.subregion,
+            capital: country.capital,
+            domain: country.tld,
+            currencies: country.currencies,
+            languages: country.languages,
+            borders: country.borders,
+        }
+    })
+    renderCountryDetails(countryData);
+    console.log(countryData);
+}
+
+if(window.location.search.includes("?country=")) {
+    document.querySelector('.filters').classList.add('hidden');
+    getCountryDetails();
+} else {
+    fetchData();
+}

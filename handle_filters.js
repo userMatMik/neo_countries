@@ -1,12 +1,23 @@
 import { countriesList } from "./app.js";
-import { renderCountriesList } from "./app.js";
+import { renderCountriesList } from "./dom-create-elements.js";
 
 const selectBtnElement = document.querySelector("#select-btn");
 const selectOptionsElement = document.querySelector("#select-options");
 
+let searchedQuerry = "";
+let selectedOption = "";
+
+const renderFilteredCountries = () => {
+    const filteredCountries = countriesList.filter((country) => {
+        return country.name.toLowerCase().includes(searchedQuerry) && (!selectedOption || country.region.toLowerCase() === selectedOption )
+    }) 
+
+    renderCountriesList(filteredCountries);
+}
+
 const chooseOptionOnClick = () => {
     const optionsElements = document.querySelectorAll('.select__option');
-    let selectedOption;
+    
     optionsElements.forEach((option) => {
         option.addEventListener('click', () => {
 
@@ -15,30 +26,32 @@ const chooseOptionOnClick = () => {
             
             selectedOption = option.innerText.toLowerCase();
 
-            const countriesByRegion = countriesList.filter((country) => {
-               return  country.region.toLowerCase() === selectedOption;
-            })
+            renderFilteredCountries();
 
-            renderCountriesList(countriesByRegion);
+            // const filteredCountriesByRegion = countriesList.filter((country) => {
+            //    return  country.region.toLowerCase() === selectedOption;
+            // })
+
+            // renderCountriesList(filteredCountriesByRegion);
         })
     })
 }
 
 selectBtnElement.addEventListener('click', ()=> {
     selectOptionsElement.classList.toggle('options-visible');
-    chooseOptionOnClick();
-    
+    chooseOptionOnClick(); 
 })
 
 //handle search input
 document.querySelector("#search-input").addEventListener('input', (event)=> {
-    let searchedQuerry = event.target.value.toLowerCase();
+    searchedQuerry = event.target.value.toLowerCase();
+    renderFilteredCountries();
     
-    const searchedCountries = countriesList.filter((country) => {
-        return country.name.toLowerCase().includes(searchedQuerry)
-    })
+    // const searchedCountries = countriesList.filter((country) => {
+    //     return country.name.toLowerCase().includes(searchedQuerry)
+    // })
 
-    renderCountriesList(searchedCountries)
+    // renderCountriesList(searchedCountries)
 })
 
 selectBtnElement.addEventListener('blur', () => {

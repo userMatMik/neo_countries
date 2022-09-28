@@ -140,6 +140,10 @@ main ul li a {
   left: 5px;
 }
 
+.filters.hidden {
+  display: none;
+}
+
 .select {
   position: relative;
   font-size: 1rem;

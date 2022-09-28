@@ -142,6 +142,9 @@ main {
             left: 5px;
         }
     }
+    &.hidden {
+        display: none;
+    }
 }
 
 .select {
@@ -196,8 +199,6 @@ main {
         // box-shadow: 3px 3px 7px #bfc2c5,
         // -3px -3px 7px #ffffff;
     }
-    
-    
 }
 
 .options-visible {
