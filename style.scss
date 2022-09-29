@@ -2,7 +2,8 @@
 
 /* Variables */
 $bg-clr: #ecf0f3;
-$font-clr: #555;
+// $font-clr: #555;
+$font-clr: black;
 
 
 /* Box sizing rules */
@@ -209,4 +210,8 @@ main {
     box-shadow: inset 3px 3px 7px #bfc2c5,
                 inset -3px -3px 7px #ffffff;
         
+}
+
+.flex {
+    display: flex;
 }

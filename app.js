@@ -4,8 +4,6 @@ import { renderCountryDetails } from "./dom-create-elements.js";
 export let countriesList;
 export let countryData;
 
-console.log(window.location.search)
-
 const API_URL = "https://restcountries.com/v3.1/all";
 const fetchData = async () => {
     const response = await fetch(API_URL);
@@ -18,12 +16,14 @@ const fetchData = async () => {
             population: country.population,
             region: country.region,
             flagUrl: country.flags.png,
-            countryID: country.cioc,
+            countryID: country.cca3,
         };
-    } )
-    
+    })
     renderCountriesList(countriesList);
+    // console.log(countriesList)
+    
 };
+
 
 const getCountryDetails = async () => {
 
@@ -33,22 +33,25 @@ const getCountryDetails = async () => {
     const API_URL_DETAILS = `https://restcountries.com/v3.1/alpha/${countryCode}`
     const response = await fetch(API_URL_DETAILS);
     const data = await response.json();
+    console.log(data)
     countryData = data.map((country) => {
         return {
             name: country.name.common,
+            nativeName: Object.values(country.name.nativeName)[0].official,
             flagUrl: country.flags.png,
             population: country.population,
             region: country.region,
             subregion: country.subregion,
             capital: country.capital,
             domain: country.tld,
-            currencies: country.currencies,
-            languages: country.languages,
+            currencies: Object.values(country.currencies)[0].name,
+            languages: Object.values(country.languages).join(", "),
             borders: country.borders,
+            countryID: country.cca3,
         }
     })
-    renderCountryDetails(countryData);
-    console.log(countryData);
+    renderCountryDetails(...countryData);
+    console.log(...countryData);
 }
 
 if(window.location.search.includes("?country=")) {
