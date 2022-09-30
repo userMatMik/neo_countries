@@ -1,5 +1,4 @@
-import { countriesList } from "./app.js";
-import { countryData } from "./app.js";
+// import { createCodeNameMap } from "./app.js";
 
 // console.log(countriesList)
 // console.log(countryData)
@@ -89,40 +88,53 @@ const createGoBackButtonElement = () => {
     linkElement.classList.add('back-btn');
     linkElement.href = "/";
 
+    const iconElement = document.createElement('ion-icon');
+    iconElement.name = "arrow-back-outline";
+
+    linkElement.appendChild(iconElement);
+
+
     return linkElement;
 }
 
 const test = (border) => {
+    
     let borderCountryName;
-    countryData.forEach((country) => {
-        // if (country.countryID === border) {
-        //     borderCountryName = country.name;
-        // }
-        console.log(countriesList)
-    })
-    console.log(countryData)
+    // countryData.forEach((country) => {
+    //     if (country.countryID === border) {
+    //         borderCountryName = country.name;
+    //     }
+    //     console.log(countriesList)
+    // })
+    // console.log(countryData)
     return borderCountryName;
     
 }
 
 const createBorderCountryElement = (border) => {
+    
     const borderCountryElement = document.createElement('a');
-    borderCountryElement.innerText = test(border);
+    borderCountryElement.innerText = border;
     borderCountryElement.href=`?country=${border}`;
 
     return borderCountryElement;
 }
 
 const createBordersElement = (countryData) => {
+    // const codeMap = createCodeNameMap();
+    // console.log(codeMap)
+
     const bordersContainerElement = document.createElement('div');
+    bordersContainerElement.classList.add("country-details__borders")
     
     const borderHeadingElement = document.createElement('h2')
     borderHeadingElement.innerText = 'Border Countries:';
+    borderHeadingElement.classList.add('country-details__borders-title')
 
     bordersContainerElement.appendChild(borderHeadingElement);
 
     countryData.borders.forEach((border) => {
-        bordersContainerElement.appendChild(createBorderCountryElement(border, countryData));
+        bordersContainerElement.appendChild(createBorderCountryElement(border));
     })
 
     return bordersContainerElement;
@@ -131,21 +143,24 @@ const createBordersElement = (countryData) => {
 const createDiteailsContainerElement = (countryData) => {
     // console.log(countryData[0]);
     const detailsContainerElement = document.createElement('div');
-    detailsContainerElement.classList.add('flex');
+    detailsContainerElement.classList.add('details-container');
 
     const flagImgElement = createFlagElement(countryData);
     const countryDetailsContainerElement = document.createElement('div');
+    countryDetailsContainerElement.classList.add('country-details');
 
     const countryNameElement = document.createElement('h2');
     countryNameElement.innerText = countryData.name;
+    countryNameElement.classList.add('country-details__name')
 
     countryDetailsContainerElement.appendChild(countryNameElement);
 
     const detailsFlexContainer = document.createElement('div');
-    detailsFlexContainer.classList.add('flex')
+    detailsFlexContainer.classList.add('country-details__details-container');
 
     const detailsLeftSideContainer =  document.createElement('div');
     const detailsRightSideContainer =  document.createElement('div');
+    
 
     detailsLeftSideContainer.appendChild(createInfoElement("Native name", countryData.nativeName));
     detailsLeftSideContainer.appendChild(createInfoElement("Population", countryData.population));

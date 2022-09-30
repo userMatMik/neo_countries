@@ -5,7 +5,7 @@ export let countriesList;
 export let countryData;
 
 const API_URL = "https://restcountries.com/v3.1/all";
-const fetchData = async () => {
+export const fetchData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
     // console.log(data)
@@ -21,15 +21,28 @@ const fetchData = async () => {
     })
     renderCountriesList(countriesList);
     // console.log(countriesList)
-    
 };
 
+// export const createCodeNameMap = async () => {
+//     const response = await fetch(API_URL);
+//     const data = await response.json();
+
+//     const mappedData = data.map((el) => {
+//         return el = {
+//             code: el.cca3,
+//             name: el.name.common
+//         }
+//     })
+//     const codeNameMap = Object.fromEntries(mappedData.map(Object.values));
+
+//     console.log(codeNameMap)
+
+//     return codeNameMap;
+// }
 
 const getCountryDetails = async () => {
-
     const searchParams = new URLSearchParams(window.location.search);
     const countryCode = searchParams.get("country");
-
     const API_URL_DETAILS = `https://restcountries.com/v3.1/alpha/${countryCode}`
     const response = await fetch(API_URL_DETAILS);
     const data = await response.json();
@@ -38,7 +51,7 @@ const getCountryDetails = async () => {
         return {
             name: country.name.common,
             nativeName: Object.values(country.name.nativeName)[0].official,
-            flagUrl: country.flags.png,
+            flagUrl: country.flags.svg,
             population: country.population,
             region: country.region,
             subregion: country.subregion,
@@ -50,8 +63,16 @@ const getCountryDetails = async () => {
             countryID: country.cca3,
         }
     })
+    
     renderCountryDetails(...countryData);
     console.log(...countryData);
+
+    // countryData[0].borders.forEach((borderCountry) => {
+
+    // })
+
+    
+
 }
 
 if(window.location.search.includes("?country=")) {

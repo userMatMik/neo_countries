@@ -206,9 +206,47 @@ main ul li a {
           box-shadow: inset 3px 3px 7px #bfc2c5, inset -3px -3px 7px #ffffff;
 }
 
-.flex {
+.details-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3rem;
+}
+
+.details-container img {
+  width: 100%;
+  max-width: 570px;
+  -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+          box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+}
+
+.back-btn {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-block: 3rem;
+  padding: 10px 45px;
+  text-decoration: none;
+  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+}
+
+.back-btn ion-icon {
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  color: black;
+  font-size: .875rem;
+  width: 15px;
+  height: 15px;
+  padding: 4px;
+  border-radius: 50%;
+  -webkit-box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
+          box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
 }
 /*# sourceMappingURL=style.css.map */
