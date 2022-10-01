@@ -133,10 +133,13 @@ const createBordersElement = (countryData) => {
 
     bordersContainerElement.appendChild(borderHeadingElement);
 
-    countryData.borders.forEach((border) => {
-        bordersContainerElement.appendChild(createBorderCountryElement(border));
-    })
+    const bordersWrapperElement = document.createElement('div');
+    bordersWrapperElement.classList.add('country-details__borders-wrapper');
 
+    countryData.borders.forEach((border) => {
+        bordersWrapperElement.appendChild(createBorderCountryElement(border));
+    })
+    bordersContainerElement.appendChild(bordersWrapperElement);
     return bordersContainerElement;
 }
  
@@ -160,6 +163,8 @@ const createDiteailsContainerElement = (countryData) => {
 
     const detailsLeftSideContainer =  document.createElement('div');
     const detailsRightSideContainer =  document.createElement('div');
+    detailsLeftSideContainer.classList.add('country-details__details-group')
+    detailsRightSideContainer.classList.add('country-details__details-group')
     
 
     detailsLeftSideContainer.appendChild(createInfoElement("Native name", countryData.nativeName));
@@ -188,7 +193,6 @@ const createDiteailsContainerElement = (countryData) => {
 }
 
 export const renderCountryDetails = (countryData) => {
-    // console.log(countryData)
     const mainElement = document.querySelector('#main');
     mainElement.innerHTML = "";
     mainElement.appendChild(createGoBackButtonElement());

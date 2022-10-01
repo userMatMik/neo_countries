@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap");
 /* Variables */
 /* Box sizing rules */
 *,
@@ -24,7 +24,7 @@ dd {
 
 /* Utilities */
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-size: .875rem;
   color: black;
   background-color: #ecf0f3;
@@ -96,7 +96,7 @@ main ul li a {
           justify-content: space-between;
   max-width: 1280px;
   margin: 0 auto;
-  padding-block: 2rem;
+  padding-block: 2rem 3rem;
 }
 
 .filters input[type=text] {
@@ -228,12 +228,12 @@ main ul li a {
   display: inline-block;
   font-family: inherit;
   font-size: 1rem;
-  font-weight: 700;
-  margin-block: 3rem;
+  color: black;
+  margin-block: 2rem 3rem;
   padding: 10px 45px;
   text-decoration: none;
-  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
-          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+  -webkit-box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+          box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
 }
 
 .back-btn ion-icon {
@@ -248,5 +248,93 @@ main ul li a {
   border-radius: 50%;
   -webkit-box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
           box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
+}
+
+.back-btn:hover {
+  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+  color: #0606f7;
+}
+
+.back-btn:hover ion-icon {
+  -webkit-box-shadow: 2px 2px 7px #bfc2c5, -2px -2px 7px #ffffff;
+          box-shadow: 2px 2px 7px #bfc2c5, -2px -2px 7px #ffffff;
+  color: #0606f7;
+}
+
+.country-details {
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+  padding: 1.5rem 3rem;
+  -webkit-box-shadow: 8px 8px 14px #bfc2c5, -8px -8px 14px #ffffff;
+          box-shadow: 8px 8px 14px #bfc2c5, -8px -8px 14px #ffffff;
+}
+
+.country-details__name {
+  font-size: 2rem;
+}
+
+.country-details__details-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4rem;
+  margin-top: 1rem;
+}
+
+.country-details__details-container strong {
+  font-size: 1rem;
+}
+
+.country-details__details-container span {
+  font-size: 1rem;
+}
+
+.country-details__details-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
+  padding: 1rem;
+  -webkit-box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+          box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+}
+
+.country-details__borders {
+  margin-top: 1rem;
+}
+
+.country-details__borders-title {
+  font-size: 1.3rem;
+}
+
+.country-details__borders-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.country-details__borders-wrapper a {
+  font-family: inherit;
+  color: black;
+  text-decoration: none;
+  padding: 5px 15px;
+  -webkit-box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+          box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+}
+
+.country-details__borders-wrapper a:hover {
+  -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+          box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+  color: #0606f7;
 }
 /*# sourceMappingURL=style.css.map */
