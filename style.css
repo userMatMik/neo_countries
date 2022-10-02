@@ -66,6 +66,8 @@ main ul li {
   box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
   overflow: hidden;
   list-style: none;
+  -webkit-transition: scale 0.2s ease-in;
+  transition: scale 0.2s ease-in;
 }
 
 main ul li img {
@@ -76,6 +78,10 @@ main ul li img {
 main ul li a {
   color: black;
   text-decoration: none;
+}
+
+main ul li:hover {
+  scale: 1.06;
 }
 
 .info-container {
@@ -162,8 +168,14 @@ main ul li a {
   gap: 1rem;
   padding: 10px 25px;
   cursor: pointer;
+  -webkit-box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+          box-shadow: 5px 5px 9px #bfc2c5, -5px -5px 9px #ffffff;
+}
+
+.select__header:hover {
   -webkit-box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
           box-shadow: 3px 3px 7px #bfc2c5, -3px -3px 7px #ffffff;
+  color: #0606f7;
 }
 
 .select__btn {
@@ -173,6 +185,8 @@ main ul li a {
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  -webkit-transition: rotate 0.4s ease-out;
+  transition: rotate 0.4s ease-out;
   -webkit-box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
           box-shadow: 5px 5px 10px #bfc2c5, -5px -5px 10px #ffffff;
 }
@@ -194,6 +208,18 @@ main ul li a {
   border-radius: 3px;
   padding: 8px 10px;
   cursor: pointer;
+}
+
+.select__option:hover {
+  -webkit-box-shadow: inset 2px 2px 5px #bfc2c5, inset -2px -2px 5px #ffffff;
+          box-shadow: inset 2px 2px 5px #bfc2c5, inset -2px -2px 5px #ffffff;
+  color: #0606f7;
+}
+
+.select:hover .select__btn {
+  -webkit-box-shadow: 2px 2px 7px #bfc2c5, -2px -2px 7px #ffffff;
+          box-shadow: 2px 2px 7px #bfc2c5, -2px -2px 7px #ffffff;
+  color: #0606f7;
 }
 
 .options-visible {

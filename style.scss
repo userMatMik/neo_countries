@@ -76,15 +76,9 @@ main {
             background: #ecf0f3;
             -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
             box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-            
-            // background-color: $bg-clr;
-            // border-radius: 10px;
-            // box-shadow: 13px 13px 20px #cbced1,
-            //             -13px -13px 20px #ffffff;
             overflow: hidden;
             list-style: none;
-
-            
+            transition: scale 0.2s ease-in;
 
             img {
                 aspect-ratio: 160/98;
@@ -94,6 +88,10 @@ main {
             a {
                 color: $font-clr;
                 text-decoration: none; 
+            }
+
+            &:hover {
+                scale: 1.06;
             }
         }
     }
@@ -155,7 +153,6 @@ main {
 .select {
     position: relative;
     font-size: 1rem;
-    
 
     &__header {
         display: flex;
@@ -164,13 +161,14 @@ main {
         gap: 1rem;
         padding: 10px 25px;
         cursor:  pointer;
-        box-shadow: 3px 3px 7px #bfc2c5,
-        -3px -3px 7px #ffffff;
+        box-shadow: $bs-btn;
+
+        &:hover {
+            box-shadow: 3px 3px 7px #bfc2c5,
+            -3px -3px 7px #ffffff;
+            color: rgb(6, 6, 247);
+        }
     }
-
-    // &__holder {
-
-    // }
 
     &__btn {
         display: grid;
@@ -178,9 +176,12 @@ main {
         width: 20px;
         height: 20px;
         border-radius: 50%;
+
+        transition: rotate 0.4s ease-out;
        
         box-shadow: 5px 5px 10px #bfc2c5,
         -5px -5px 10px #ffffff;
+
     }
 
     &__options {
@@ -203,6 +204,20 @@ main {
         cursor: pointer;
         // box-shadow: 3px 3px 7px #bfc2c5,
         // -3px -3px 7px #ffffff;
+
+        &:hover {
+            box-shadow: inset 2px 2px 5px #bfc2c5,
+                inset -2px -2px 5px #ffffff;
+            color: rgb(6, 6, 247);
+        }
+    }
+
+    &:hover {
+        .select__btn {
+            box-shadow: 2px 2px 7px #bfc2c5,
+                        -2px -2px 7px #ffffff;
+            color: rgb(6, 6, 247);
+        }
     }
 }
 
