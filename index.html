@@ -8,6 +8,7 @@
     <script type="module" src="app.js" defer></script>
     <script type="module" src="handle_filters.js" defer></script>
     <script type="module" src="dom-create-elements.js" defer></script>
+    <script type="module" src="dark_mode.js" defer></script>
 
     <title>Neo countries app</title>
 </head>
@@ -15,7 +16,16 @@
     <header class="header">
         <div class="header__container">
             <h1>Where in the world?</h1>
-            <button>Dark theme</button>
+            <div class="switch-container">
+                <span class="switch-label">Dark mode</span>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="switch__slider"></span>
+                    <span class="switch__on">ON</span>
+                    <span class="switch__off">OFF</span>
+                    <span class="switch__dot"></span>
+                </label>
+            </div>
         </div>
     </header>
     <div class="filters">

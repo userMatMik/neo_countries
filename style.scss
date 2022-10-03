@@ -3,12 +3,42 @@
 
 /* Variables */
 $bg-clr: #ecf0f3;
-// $font-clr: #555;
-$font-clr: black;
+$font-clr: #000000;
+$accent-clr: #5d42f5;
+
+$clr-pink: #f252a5;
+// $bg-clr: #2f3230;
+
+$bs-list-items: 12px 12px 22px #a5a8aa,
+                -12px -12px 22px #ffffff;
 
 $bs-btn: 5px 5px 9px #bfc2c5,
         -5px -5px 9px #ffffff;
 
+$bs-btn-hover: 3px 3px 7px #bfc2c5,
+                -3px -3px 7px #ffffff;
+
+$bs-small-inset: inset 2px 2px 5px #bfc2c5,
+                inset -2px -2px 5px #ffffff;
+
+$bs-country-details: 8px 8px 14px #bfc2c5,
+                    -8px -8px 14px #ffffff;
+
+$bs-flag-details: 12px 12px 22px #a5a8aa,
+                -12px -12px 22px #ffffff;
+
+$bs-slider-dot: -2px -2px 8px rgba(255, 255, 255, 1),
+                -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                2px 2px 8px rgba(0, 0, 0, .3);
+
+$bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
+            -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset -2px -2px 8px rgba(255, 255, 255, 1),
+            inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+            inset 2px 2px 8px rgba(0, 0, 0, .3),
+            2px 2px 8px rgba(0, 0, 0, .3);
 
 /* Box sizing rules */
 *,
@@ -31,29 +61,103 @@ dd {
   margin: 0;
 }
 
-/* Utilities */
+/* Styles */
 
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: .875rem;
     color: $font-clr;
     background-color: $bg-clr;
+    padding-bottom: 2rem;
 }
 
 .header {
     border-radius: 0 0 10px 10px;
     padding-block: 1rem;
-    background: #ecf0f3;
-    // -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-    // box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-    box-shadow: 3px 3px 7px #bfc2c5,
-        -3px -3px 7px #ffffff;
+    background: $bg-clr;
+    -webkit-box-shadow: $bs-btn;
+    box-shadow: $bs-btn-hover;
 
     &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         max-width: 1280px;
         margin: 0 auto;
     }
 
+    .switch-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .switch-label {
+        font-size: 1rem;
+        margin-right: 1rem;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 30px;
+        cursor: pointer;
+
+        input {
+            display: none;
+        }
+
+        &__slider {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 2px solid 2px solid $bg-clr;
+            border-radius: 20px;
+            box-shadow: $bs-slider;
+            background-color: $bg-clr;
+        }
+
+        &__off {
+            position: absolute;
+            top: 9px;
+            right: 5px;
+            font-family: inherit;
+            color: $font-clr;
+            font-size: .625rem;
+            font-weight: 700;
+        }
+
+        &__on {
+            position: absolute;
+            top: 9px;
+            left: 7px;
+            font-size: .625rem;
+            color: $clr-pink;
+            font-weight: 700;
+        }     
+    }
+}
+
+.switch__slider::before {
+    position: absolute;
+        bottom: 3px;
+        left: 5px;
+        z-index: 1;
+        width: 24px;
+         height: 24px;
+         border-radius: 50%;
+         box-shadow: $bs-slider-dot;
+         background-color: $bg-clr;
+                content: "";
+        transition: .5s;
+}
+
+input[type="checkbox"]:checked + .switch__slider::before {
+    transform: translateX(26px);
 }
 
 main {
@@ -68,14 +172,13 @@ main {
         gap: 3rem;
         list-style: none;
         
-
         li {
 
             -webkit-border-radius: 10px;
             border-radius: 10px;
-            background: #ecf0f3;
-            -webkit-box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-            box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
+            background: $bg-clr;
+            -webkit-box-shadow: $bs-list-items;
+            box-shadow: $bs-list-items;
             overflow: hidden;
             list-style: none;
             transition: scale 0.2s ease-in;
@@ -124,11 +227,7 @@ main {
         font-weight: 500;
         color: $font-clr;
         padding:10px 25px;
-        // border-radius: 10px;
-        // box-shadow: inset 3px 3px 7px #bfc2c5,
-        // inset -3px -3px 7px #ffffff;
-        box-shadow: 3px 3px 7px #bfc2c5,
-        -3px -3px 7px #ffffff;
+        box-shadow: $bs-btn;
 
         &::placeholder {
             color: #bfc2c5;
@@ -164,9 +263,8 @@ main {
         box-shadow: $bs-btn;
 
         &:hover {
-            box-shadow: 3px 3px 7px #bfc2c5,
-            -3px -3px 7px #ffffff;
-            color: rgb(6, 6, 247);
+            box-shadow: $bs-btn-hover;
+            color: $accent-clr;
         }
     }
 
@@ -179,22 +277,20 @@ main {
 
         transition: rotate 0.4s ease-out;
        
-        box-shadow: 5px 5px 10px #bfc2c5,
-        -5px -5px 10px #ffffff;
+        box-shadow: $bs-btn;
 
     }
 
     &__options {
         position: absolute;
+        top: 50px;
         display: none;
         gap: 10px;
         padding: 10px 25px;
         text-align: left;
         width: 100%;
         background-color: $bg-clr;
-        box-shadow: 3px 3px 7px #bfc2c5,
-        -3px -3px 7px #ffffff;
-        
+        box-shadow: $bs-btn-hover;
         z-index: 1;
     }
 
@@ -202,21 +298,17 @@ main {
         border-radius: 3px;
         padding: 8px 10px;
         cursor: pointer;
-        // box-shadow: 3px 3px 7px #bfc2c5,
-        // -3px -3px 7px #ffffff;
 
         &:hover {
-            box-shadow: inset 2px 2px 5px #bfc2c5,
-                inset -2px -2px 5px #ffffff;
-            color: rgb(6, 6, 247);
+            box-shadow: $bs-small-inset;
+            color: $accent-clr;
         }
     }
 
     &:hover {
         .select__btn {
-            box-shadow: 2px 2px 7px #bfc2c5,
-                        -2px -2px 7px #ffffff;
-            color: rgb(6, 6, 247);
+            box-shadow: $bs-btn-hover;
+            color: $accent-clr;
         }
     }
 }
@@ -226,8 +318,7 @@ main {
 }
 
 .option-selected {
-    box-shadow: inset 3px 3px 7px #bfc2c5,
-                inset -3px -3px 7px #ffffff;
+    box-shadow: $bs-small-inset;
         
 }
 
@@ -239,10 +330,7 @@ main {
     img {
         width: 100%;
         max-width: 570px;
-        box-shadow: 12px 12px 22px #a5a8aa, -12px -12px 22px #ffffff;
-        // box-shadow: 10px 10px 24px #666869, -10px -10px 24px #e4e8eb;
-        // box-shadow: 8px 8px 14px #bfc2c5,-8px -8px 14px #ffffff;
-
+        box-shadow: $bs-flag-details;
     }
 }
 
@@ -251,7 +339,7 @@ main {
     display: inline-block;
     font-family: inherit;
     font-size: 1rem;
-    color: black;
+    color: $font-clr;
     margin-block: 2rem 3rem;
     padding:10px 45px;
     text-decoration: none;
@@ -269,19 +357,15 @@ main {
         padding: 4px;
         border-radius: 50%;
 
-        box-shadow: 5px 5px 10px #bfc2c5,
-        -5px -5px 10px #ffffff;
+        box-shadow: $bs-btn;
     }
 
     &:hover {
-        box-shadow: 3px 3px 7px #bfc2c5,
-                -3px -3px 7px #ffffff;
-        color: rgb(6, 6, 247);
+        box-shadow: $bs-btn-hover;
+        color: $accent-clr;
 
         ion-icon {
-            box-shadow: 2px 2px 7px #bfc2c5,
-                        -2px -2px 7px #ffffff;
-            color: rgb(6, 6, 247);
+            box-shadow: $bs-btn-hover;
         }
     }
 }
@@ -290,8 +374,7 @@ main {
     display: grid;
     place-content: center;
     padding: 1.5rem 3rem;
-    box-shadow: 8px 8px 14px #bfc2c5,
-    -8px -8px 14px #ffffff;
+    box-shadow: $bs-country-details;
     
     &__name {
         font-size: 2rem;
@@ -333,21 +416,17 @@ main {
         gap: 1rem;
         margin-top: 1rem;
 
-
         a {
             font-family: inherit;
             color: black;
             text-decoration: none;
             padding: 5px 15px;
-            box-shadow: 5px 5px 9px #bfc2c5,
-                -5px -5px 9px #ffffff;
+            box-shadow: $bs-btn;
 
             &:hover {
-                box-shadow: 3px 3px 7px #bfc2c5,
-                -3px -3px 7px #ffffff;
-                color: rgb(6, 6, 247);
+                box-shadow: $bs-btn-hover;
+                color: $accent-clr;
             }
         }
     }
-
 }

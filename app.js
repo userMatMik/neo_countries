@@ -8,7 +8,6 @@ const API_URL = "https://restcountries.com/v3.1/all";
 export const fetchData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
-    // console.log(data)
     countriesList = data.map((country) => {
         return {
             name: country.name.common,
@@ -20,25 +19,7 @@ export const fetchData = async () => {
         };
     })
     renderCountriesList(countriesList);
-    // console.log(countriesList)
 };
-
-// export const createCodeNameMap = async () => {
-//     const response = await fetch(API_URL);
-//     const data = await response.json();
-
-//     const mappedData = data.map((el) => {
-//         return el = {
-//             code: el.cca3,
-//             name: el.name.common
-//         }
-//     })
-//     const codeNameMap = Object.fromEntries(mappedData.map(Object.values));
-
-//     console.log(codeNameMap)
-
-//     return codeNameMap;
-// }
 
 const getCountryDetails = async () => {
     const searchParams = new URLSearchParams(window.location.search);
@@ -65,14 +46,6 @@ const getCountryDetails = async () => {
     })
     
     renderCountryDetails(...countryData);
-    console.log(...countryData);
-
-    // countryData[0].borders.forEach((borderCountry) => {
-
-    // })
-
-    
-
 }
 
 if(window.location.search.includes("?country=")) {

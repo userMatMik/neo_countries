@@ -1,8 +1,3 @@
-// import { createCodeNameMap } from "./app.js";
-
-// console.log(countriesList)
-// console.log(countryData)
-
 //main page
 const createInfoElement = (str, value) => {
     const infoDivElement =  document.createElement('div');
@@ -61,14 +56,12 @@ const createCountryElement = (country) => {
     linkElement.appendChild(createInfoContainer(country));
 
     countryElement.appendChild(linkElement);
-    // countryElement.appendChild(createInfoContainer(country));
 
     return countryElement
 }
 
 const createCountriesList = (countriesList) => {
     const listElement = document.createElement('ul');
-    // console.log(countriesList)
     countriesList.forEach((country) => {
         listElement.appendChild(createCountryElement(country))
     })
@@ -93,22 +86,7 @@ const createGoBackButtonElement = () => {
 
     linkElement.appendChild(iconElement);
 
-
     return linkElement;
-}
-
-const test = (border) => {
-    
-    let borderCountryName;
-    // countryData.forEach((country) => {
-    //     if (country.countryID === border) {
-    //         borderCountryName = country.name;
-    //     }
-    //     console.log(countriesList)
-    // })
-    // console.log(countryData)
-    return borderCountryName;
-    
 }
 
 const createBorderCountryElement = (border) => {
@@ -121,8 +99,6 @@ const createBorderCountryElement = (border) => {
 }
 
 const createBordersElement = (countryData) => {
-    // const codeMap = createCodeNameMap();
-    // console.log(codeMap)
 
     const bordersContainerElement = document.createElement('div');
     bordersContainerElement.classList.add("country-details__borders")
@@ -144,7 +120,6 @@ const createBordersElement = (countryData) => {
 }
  
 const createDiteailsContainerElement = (countryData) => {
-    // console.log(countryData[0]);
     const detailsContainerElement = document.createElement('div');
     detailsContainerElement.classList.add('details-container');
 
