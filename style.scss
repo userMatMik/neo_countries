@@ -1,13 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800&display=swap');
 
-
 /* Variables */
+
 $bg-clr: #ecf0f3;
 $font-clr: #000000;
 $accent-clr: #5d42f5;
 
 $clr-pink: #f252a5;
-// $bg-clr: #2f3230;
 
 $bs-list-items: 12px 12px 22px #a5a8aa,
                 -12px -12px 22px #ffffff;
@@ -40,6 +39,73 @@ $bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
             inset 2px 2px 8px rgba(0, 0, 0, .3),
             2px 2px 8px rgba(0, 0, 0, .3);
 
+:root {
+    --bg-clr-light: #ecf0f3;
+    --font-clr-light: #000000;
+    --accent-clr-light: #5d42f5;
+    
+    --bg-clr-dark: #2f3230;
+    --font-clr-dark: #c7c3c3;
+    --accent-clr-dark: #f252a5;
+
+
+    --bs-flag-items-light: 12px 12px 22px #a5a8aa,
+                        -12px -12px 22px #ffffff;
+
+    --bs-btn-light: 5px 5px 9px #bfc2c5,
+            -5px -5px 9px #ffffff;
+
+    --bs-btn-hover-light: 3px 3px 7px #bfc2c5,
+                -3px -3px 7px #ffffff;
+
+    --bs-small-inset-light: inset 2px 2px 5px #bfc2c5,
+                inset -2px -2px 5px #ffffff;
+
+    --bs-country-details-light: 8px 8px 14px #bfc2c5,
+                    -8px -8px 14px #ffffff;
+
+    --bs-slider-dot-light: -2px -2px 8px rgba(255, 255, 255, 1),
+                    -2px -2px 12px rgba(255, 255, 255, 0.5),
+                    inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                    2px 2px 8px rgba(0, 0, 0, .3);
+
+    --bs-slider-light: -2px -2px 8px rgba(255, 255, 255, 1),
+                -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset -2px -2px 8px rgba(255, 255, 255, 1),
+                inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                inset 2px 2px 8px rgba(0, 0, 0, .3),
+                2px 2px 8px rgba(0, 0, 0, .3);
+
+    --bs-flag-items-dark: 10px 10px 14px #1f211f,
+                        -10px -10px 14px #3f4441;
+    --bs-btn-dark: 6px 6px 12px #1f211f,
+                -6px -6px 12px #3f4441;
+    --bs-btn-hover-dark:   3px 3px 7px #1f211f,
+                                -3px -3px 7px #3f4441;
+    --bs-small-inset-dark: inset 2px 2px 5px #1f211f,
+                        inset -2px -2px 5px #3f4441;
+    --bs-country-details-dark: 8px 8px 16px #1f211f,
+                            -8px -8px 16px #3f4441;
+    --bs-slider-dark: -8px -4px 8px 0px #3f4441,
+                    8px 4px 12px 0px #1f211f,
+                    inset -4px -4px 4px 0px #3f4441,
+                    inset 4px 4px 4px 0px #1f211f;
+    --bs-slider-dot-dark: box-shadow: -8px -4px 8px 0px #3f4441,
+                                        8px 4px 12px 0px #1f211f;
+
+    --background-clr: var( --bg-clr-light);
+    --text-color: var(--font-clr-light);
+    --hover-text-color: var(--accent-clr-light);
+    --box-shadow-flag: var(--bs-flag-items-light);
+    --box-shadow-btn: var(--bs-btn-light);
+    --box-shadow-btn-hover: var(--bs-btn-hover-light);
+    --box-shadow-small-inset: var(--bs-small-inset-light);
+    --box-shadow-country-details: var(--bs-country-details-light);
+    --box-shadow-slider: var(--bs-slider-light);
+    --box-shadow-slider-dot: var(--bs-slider-dot-light);
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -61,22 +127,53 @@ dd {
   margin: 0;
 }
 
+/* Dark & light mode */
+
+body.light {
+    --background-clr: var( --bg-clr-light);
+    --text-color: var(--font-clr-light);
+    --hover-text-color: var(--accent-clr-light);
+    --box-shadow-flag: var(--bs-flag-items-light);
+    --box-shadow-btn: var(--bs-btn-light);
+    --box-shadow-btn-hover: var(--bs-btn-hover-light);
+    --box-shadow-small-inset: var(--bs-small-inset-light);
+    --box-shadow-country-details: var(--bs-country-details-light);
+    --box-shadow-slider: var(--bs-slider-light);
+    --box-shadow-slider-dot: var(--bs-slider-dot-light);
+}
+
+body.dark {
+    --background-clr: var( --bg-clr-dark);
+    --text-color: var(--font-clr-dark);
+    --hover-text-color: var(--accent-clr-dark);
+    --box-shadow-flag: var(--bs-flag-items-dark);
+    --box-shadow-btn: var(--bs-btn-dark);
+    --box-shadow-btn-hover: var(--bs-btn-hover-dark);
+    --box-shadow-small-inset: var(--bs-small-inset-dark);
+    --box-shadow-country-details: var(--bs-country-details-dark);
+    --box-shadow-slider: var(--bs-slider-dark);
+    --box-shadow-slider-dot: var(--bs-slider-dot-dark);
+}
+
 /* Styles */
+
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     font-family: 'Nunito Sans', sans-serif;
     font-size: .875rem;
-    color: $font-clr;
-    background-color: $bg-clr;
+    color: var(--text-color);
+    background-color: var( --background-clr);
     padding-bottom: 2rem;
 }
 
 .header {
     border-radius: 0 0 10px 10px;
     padding-block: 1rem;
-    background: $bg-clr;
-    -webkit-box-shadow: $bs-btn;
-    box-shadow: $bs-btn-hover;
+    background: var( --background-clr);
+    box-shadow: var(--box-shadow-btn-hover);
 
     &__container {
         display: flex;
@@ -84,6 +181,16 @@ body {
         align-items: center;
         max-width: 1280px;
         margin: 0 auto;
+        padding-inline: 1rem;
+
+        h1 {
+            font-size: 1.75rem;
+
+            
+            @media only screen and (max-width: 500px) {
+                font-size: 1.2rem;
+            }
+        }
     }
 
     .switch-container {
@@ -96,6 +203,11 @@ body {
     .switch-label {
         font-size: 1rem;
         margin-right: 1rem;
+
+        @media only screen and (max-width: 400px) {
+            font-size: 0.7rem;
+            margin-right: 8px;
+        }
     }
 
     .switch {
@@ -115,10 +227,10 @@ body {
             right: 0;
             bottom: 0;
             left: 0;
-            border: 2px solid 2px solid $bg-clr;
+            border: 2px solid 2px solid var(--background-clr);
             border-radius: 20px;
-            box-shadow: $bs-slider;
-            background-color: $bg-clr;
+            box-shadow: var(--box-shadow-slider);
+            background-color: var(--background-clr);
         }
 
         &__off {
@@ -126,7 +238,7 @@ body {
             top: 9px;
             right: 5px;
             font-family: inherit;
-            color: $font-clr;
+            color: var(--hover-text-color);
             font-size: .625rem;
             font-weight: 700;
         }
@@ -136,7 +248,7 @@ body {
             top: 9px;
             left: 7px;
             font-size: .625rem;
-            color: $clr-pink;
+            color: var(--hover-text-color);
             font-weight: 700;
         }     
     }
@@ -150,35 +262,46 @@ body {
         width: 24px;
          height: 24px;
          border-radius: 50%;
-         box-shadow: $bs-slider-dot;
-         background-color: $bg-clr;
+         box-shadow: var(--box-shadow-slider-dot);
+         background-color: var(--background-clr);
                 content: "";
         transition: .5s;
 }
 
 input[type="checkbox"]:checked + .switch__slider::before {
-    transform: translateX(26px);
+    transform: translateX(27px);
 }
 
 main {
     max-width: 1280px;
     margin: 0 auto;
+    padding-inline: 1rem;
     
     ul {
         margin: 0;
         padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
+        // grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 3rem;
         list-style: none;
+
+        @media only screen and (max-width: 1000px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media only screen and (max-width: 400px) {
+            grid-template-columns: 1fr;
+        }
         
         li {
-
-            -webkit-border-radius: 10px;
             border-radius: 10px;
-            background: $bg-clr;
-            -webkit-box-shadow: $bs-list-items;
-            box-shadow: $bs-list-items;
+            background: var( --background-clr);
+            box-shadow: var(--box-shadow-flag);
             overflow: hidden;
             list-style: none;
             transition: scale 0.2s ease-in;
@@ -189,7 +312,7 @@ main {
             }
 
             a {
-                color: $font-clr;
+                color: var(--text-color);
                 text-decoration: none; 
             }
 
@@ -197,8 +320,7 @@ main {
                 scale: 1.06;
             }
         }
-    }
-    
+    } 
 }
 
 .info-container {
@@ -217,25 +339,44 @@ main {
     max-width: 1280px;
     margin: 0 auto;
     padding-block: 2rem 3rem;
+    padding-inline: 1rem;
 
-    input[type=text] {
-        border: none;
-        outline:none;
-        background: none;
-        font-family: inherit;
-        font-size: 1rem;
-        font-weight: 500;
-        color: $font-clr;
-        padding:10px 25px;
-        box-shadow: $bs-btn;
-
-        &::placeholder {
-            color: #bfc2c5;
-        }
+    @media only screen and (max-width: 600px) {
+            
+        flex-direction: column;
+        gap: 2rem;
+        
     }
+
+    
 
     .search {
         position: relative;
+
+        @media only screen and (max-width: 600px) {
+            width: 100%;
+            flex-grow: 1; 
+        }
+
+        input[type=text] {
+            border: none;
+            outline:none;
+            background: none;
+            font-family: inherit;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-color);
+            padding:10px 25px;
+            box-shadow: var(--box-shadow-btn);
+
+            @media only screen and (max-width: 600px) {
+                width: 100%;
+            }
+    
+            &::placeholder {
+                color: #bfc2c5;
+            }  
+        }
         
         &__icon {
             position: absolute;
@@ -253,6 +394,19 @@ main {
     position: relative;
     font-size: 1rem;
 
+    
+    @media only screen and (max-width: 600px) {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 400px) {
+        width: 60%;
+    }
+
+    @media only screen and (max-width: 320px) {
+        width: 100%;
+    }
+
     &__header {
         display: flex;
         justify-content: center;
@@ -260,11 +414,11 @@ main {
         gap: 1rem;
         padding: 10px 25px;
         cursor:  pointer;
-        box-shadow: $bs-btn;
+        box-shadow: var(--box-shadow-btn);
 
         &:hover {
-            box-shadow: $bs-btn-hover;
-            color: $accent-clr;
+            box-shadow: var(--box-shadow-btn-hover);
+            color: var(--hover-text-color);
         }
     }
 
@@ -275,10 +429,9 @@ main {
         height: 20px;
         border-radius: 50%;
 
-        transition: rotate 0.4s ease-out;
+        // transition: rotate 0.4s ease-out;
        
-        box-shadow: $bs-btn;
-
+        box-shadow: var(--box-shadow-btn);
     }
 
     &__options {
@@ -289,8 +442,8 @@ main {
         padding: 10px 25px;
         text-align: left;
         width: 100%;
-        background-color: $bg-clr;
-        box-shadow: $bs-btn-hover;
+        background-color: var(--background-clr);
+        box-shadow: var(--box-shadow-btn-hover);
         z-index: 1;
     }
 
@@ -300,15 +453,15 @@ main {
         cursor: pointer;
 
         &:hover {
-            box-shadow: $bs-small-inset;
-            color: $accent-clr;
+            box-shadow: var(--box-shadow-small-inset);
+            color: var(--hover-text-color);
         }
     }
 
     &:hover {
         .select__btn {
-            box-shadow: $bs-btn-hover;
-            color: $accent-clr;
+            box-shadow: var(--box-shadow-btn-hover);
+            color: var( --hover-text-color);
         }
     }
 }
@@ -318,7 +471,7 @@ main {
 }
 
 .option-selected {
-    box-shadow: $bs-small-inset;
+    box-shadow: var(--box-shadow-small-inset);
         
 }
 
@@ -327,10 +480,20 @@ main {
     justify-content: space-between;
     gap: 3rem;
 
+    @media only screen and (max-width: 768px) {    
+        display: block;
+    }
+
     img {
         width: 100%;
         max-width: 570px;
-        box-shadow: $bs-flag-details;
+        box-shadow: var(--box-shadow-flag);
+
+        @media only screen and (max-width: 768px) {    
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+        }
     }
 }
 
@@ -339,33 +502,34 @@ main {
     display: inline-block;
     font-family: inherit;
     font-size: 1rem;
-    color: $font-clr;
+    color: var(--text-color);
     margin-block: 2rem 3rem;
     padding:10px 45px;
     text-decoration: none;
 
-    box-shadow: $bs-btn;
+    box-shadow: var(--box-shadow-btn);
 
     ion-icon {
         position: absolute;
         left: 10px;
         top: 8px;
-        color: black;
+        color: var(--text-color);
         font-size: .875rem;
         width: 15px;
         height: 15px;
         padding: 4px;
         border-radius: 50%;
 
-        box-shadow: $bs-btn;
+        box-shadow: var(--box-shadow-btn);
     }
 
     &:hover {
-        box-shadow: $bs-btn-hover;
-        color: $accent-clr;
+        box-shadow: var(--box-shadow-btn-hover);
+        color: var(--hover-text-color);
 
         ion-icon {
-            box-shadow: $bs-btn-hover;
+            box-shadow: var(--box-shadow-btn-hover);
+            color: var(--hover-text-color);
         }
     }
 }
@@ -374,7 +538,12 @@ main {
     display: grid;
     place-content: center;
     padding: 1.5rem 3rem;
-    box-shadow: $bs-country-details;
+    box-shadow: var(--box-shadow-country-details);
+
+    @media only screen and (max-width: 768px) {    
+      place-content: center start;
+      grid-template-columns: 1fr;
+    }
     
     &__name {
         font-size: 2rem;
@@ -384,6 +553,14 @@ main {
         display: flex;
         gap: 4rem;
         margin-top: 1rem;
+
+        @media only screen and (max-width: 1000px) {
+            
+            flex-direction: column;
+            gap: 7px;
+            box-shadow: var(--box-shadow-btn);
+            padding: 2rem 1rem; 
+        }
 
         strong {
             font-size: 1rem;
@@ -399,7 +576,15 @@ main {
         flex-direction: column;
         gap: 5px;
         padding: 1rem;
-        box-shadow: $bs-btn;
+        box-shadow: var(--box-shadow-btn);
+
+        @media only screen and (max-width: 1000px) {
+            
+            gap:7px;
+            box-shadow: none;
+            padding-bottom: 0;
+            padding-top: 0;
+        }
     }
 
     &__borders {
@@ -418,15 +603,45 @@ main {
 
         a {
             font-family: inherit;
-            color: black;
+            color: var(--text-color);
             text-decoration: none;
             padding: 5px 15px;
-            box-shadow: $bs-btn;
+            box-shadow: var(--box-shadow-btn);
 
             &:hover {
-                box-shadow: $bs-btn-hover;
-                color: $accent-clr;
+                box-shadow: var(--box-shadow-btn-hover);
+                color: var( --hover-text-color);
             }
         }
     }
 }
+.back-to-top {
+    display: grid;
+    place-items: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    background-color: var( --background-clr);
+    box-shadow: var(--box-shadow-btn);
+    z-index: 3;
+    visibility: hidden;
+    transition: 0.5s ease;
+
+    &:hover {
+        box-shadow: var(--box-shadow-btn-hover);
+        color: var(--hover-text-color);
+    }
+
+    &.active {
+        visibility: visible;
+        transform: translateY(-10px);
+    }
+}
+
+
+
