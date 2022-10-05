@@ -1,3 +1,5 @@
+import { renderMap } from "./leaflet_map.js";
+
 //main page
 const createInfoElement = (str, value) => {
     const infoDivElement =  document.createElement('div');
@@ -92,8 +94,8 @@ const createGoBackButtonElement = () => {
 const createBorderCountryElement = (border) => {
     
     const borderCountryElement = document.createElement('a');
-    borderCountryElement.innerText = border;
-    borderCountryElement.href=`?country=${border}`;
+    borderCountryElement.innerText = border.name;
+    borderCountryElement.href=`?country=${border.code}`;
 
     return borderCountryElement;
 }
@@ -124,6 +126,7 @@ const createDiteailsContainerElement = (countryData) => {
     detailsContainerElement.classList.add('details-container');
 
     const flagImgElement = createFlagElement(countryData);
+    flagImgElement.classList.add('details-container__flag')
     const countryDetailsContainerElement = document.createElement('div');
     countryDetailsContainerElement.classList.add('country-details');
 
@@ -143,7 +146,7 @@ const createDiteailsContainerElement = (countryData) => {
     
 
     detailsLeftSideContainer.appendChild(createInfoElement("Native name", countryData.nativeName));
-    detailsLeftSideContainer.appendChild(createInfoElement("Population", countryData.population));
+    detailsLeftSideContainer.appendChild(createInfoElement("Population", countryData.population.toLocaleString()));
     detailsLeftSideContainer.appendChild(createInfoElement("Region", countryData.region));
     detailsLeftSideContainer.appendChild(createInfoElement("Subregion", countryData.subregion));
     detailsLeftSideContainer.appendChild(createInfoElement("Capital", countryData.capital));
@@ -160,9 +163,15 @@ const createDiteailsContainerElement = (countryData) => {
     if (countryData.borders) {
         countryDetailsContainerElement.appendChild(createBordersElement(countryData))
     }
+    //add map
+    const mapElement = document.createElement('div');
+    mapElement.classList.add('map-container');
+    mapElement.setAttribute('id', 'map');
+    
 
     detailsContainerElement.appendChild(flagImgElement);
     detailsContainerElement.appendChild(countryDetailsContainerElement);
+    detailsContainerElement.appendChild(mapElement);
 
     return detailsContainerElement;
 }
@@ -172,4 +181,6 @@ export const renderCountryDetails = (countryData) => {
     mainElement.innerHTML = "";
     mainElement.appendChild(createGoBackButtonElement());
     mainElement.appendChild(createDiteailsContainerElement(countryData));
+    renderMap(countryData.coordinates);
+    console.log(countryData.coordinates)
 }

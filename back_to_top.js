@@ -21,5 +21,5 @@ const createLinkElement = () => {
 }
 
 document.addEventListener('scroll', handleBackToTop);
-window.onload = handleBackToTop;
+
 window.onload = createLinkElement;

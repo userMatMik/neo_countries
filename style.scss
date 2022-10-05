@@ -8,36 +8,36 @@ $accent-clr: #5d42f5;
 
 $clr-pink: #f252a5;
 
-$bs-list-items: 12px 12px 22px #a5a8aa,
-                -12px -12px 22px #ffffff;
+// $bs-list-items: 12px 12px 22px #a5a8aa,
+//                 -12px -12px 22px #ffffff;
 
-$bs-btn: 5px 5px 9px #bfc2c5,
-        -5px -5px 9px #ffffff;
+// $bs-btn: 5px 5px 9px #bfc2c5,
+//         -5px -5px 9px #ffffff;
 
-$bs-btn-hover: 3px 3px 7px #bfc2c5,
-                -3px -3px 7px #ffffff;
+// $bs-btn-hover: 3px 3px 7px #bfc2c5,
+//                 -3px -3px 7px #ffffff;
 
-$bs-small-inset: inset 2px 2px 5px #bfc2c5,
-                inset -2px -2px 5px #ffffff;
+// $bs-small-inset: inset 2px 2px 5px #bfc2c5,
+//                 inset -2px -2px 5px #ffffff;
 
-$bs-country-details: 8px 8px 14px #bfc2c5,
-                    -8px -8px 14px #ffffff;
+// $bs-country-details: 8px 8px 14px #bfc2c5,
+//                     -8px -8px 14px #ffffff;
 
-$bs-flag-details: 12px 12px 22px #a5a8aa,
-                -12px -12px 22px #ffffff;
+// $bs-flag-details: 12px 12px 22px #a5a8aa,
+//                 -12px -12px 22px #ffffff;
 
-$bs-slider-dot: -2px -2px 8px rgba(255, 255, 255, 1),
-                -2px -2px 12px rgba(255, 255, 255, 0.5),
-                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-                2px 2px 8px rgba(0, 0, 0, .3);
+// $bs-slider-dot: -2px -2px 8px rgba(255, 255, 255, 1),
+//                 -2px -2px 12px rgba(255, 255, 255, 0.5),
+//                 inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+//                 2px 2px 8px rgba(0, 0, 0, .3);
 
-$bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
-            -2px -2px 12px rgba(255, 255, 255, 0.5),
-            inset -2px -2px 8px rgba(255, 255, 255, 1),
-            inset -2px -2px 12px rgba(255, 255, 255, 0.5),
-            inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-            inset 2px 2px 8px rgba(0, 0, 0, .3),
-            2px 2px 8px rgba(0, 0, 0, .3);
+// $bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
+//             -2px -2px 12px rgba(255, 255, 255, 0.5),
+//             inset -2px -2px 8px rgba(255, 255, 255, 1),
+//             inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+//             inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+//             inset 2px 2px 8px rgba(0, 0, 0, .3),
+//             2px 2px 8px rgba(0, 0, 0, .3);
 
 :root {
     --bg-clr-light: #ecf0f3;
@@ -347,9 +347,7 @@ main {
         gap: 2rem;
         
     }
-
     
-
     .search {
         position: relative;
 
@@ -375,7 +373,7 @@ main {
     
             &::placeholder {
                 color: #bfc2c5;
-            }  
+            }
         }
         
         &__icon {
@@ -476,24 +474,43 @@ main {
 }
 
 .details-container {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 3rem;
 
     @media only screen and (max-width: 768px) {    
         display: block;
     }
-
-    img {
-        width: 100%;
-        max-width: 570px;
-        box-shadow: var(--box-shadow-flag);
-
-        @media only screen and (max-width: 768px) {    
-            display: block;
-            margin: 0 auto;
-            margin-bottom: 2rem;
+    &__flag {
+        img {
+            width: 100%;
+            max-width: 570px;
+            box-shadow: var(--box-shadow-flag);
+    
+            @media only screen and (max-width: 768px) {    
+                display: block;
+                margin: 0 auto;
+                margin-bottom: 2rem;
+            }
         }
+    }
+    // img {
+    //     width: 100%;
+    //     max-width: 570px;
+    //     // box-shadow: var(--box-shadow-flag);
+
+    //     @media only screen and (max-width: 768px) {    
+    //         display: block;
+    //         margin: 0 auto;
+    //         margin-bottom: 2rem;
+    //     }
+    // }
+
+    .map-container {
+        grid-column: 1 / 3;
+        height: 400px;
+        width: 100%;
+        box-shadow: var(--box-shadow-country-details);
     }
 }
 
@@ -603,6 +620,7 @@ main {
 
         a {
             font-family: inherit;
+            font-size: 1rem;
             color: var(--text-color);
             text-decoration: none;
             padding: 5px 15px;
@@ -642,6 +660,8 @@ main {
         transform: translateY(-10px);
     }
 }
+
+
 
 
 

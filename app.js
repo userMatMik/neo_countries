@@ -22,12 +22,35 @@ export const fetchData = async () => {
     renderCountriesList(countriesList);
 };
 
+const getBorderCountrysName = async (borders) => {
+    if (!borders) {
+        return
+    } else {
+        const API_URL_DETAILS = 'https://restcountries.com/v3.1/alpha/'
+        const promisesArr = borders.map((borderCountryCode) => {
+            return borderCountryCode = fetch(API_URL_DETAILS + borderCountryCode);
+        })
+        const results = await Promise.all(promisesArr)
+        const dataPromises = results.map((result) => result.json());
+        const finalData = await Promise.all(dataPromises);
+        const borderCountrys = finalData.map((data) => {
+            return {
+                code: data[0].cca3,
+                name: data[0].name.common,
+            }
+        })
+        return borderCountrys;
+    }
+}
+
 const getCountryDetails = async () => {
     const searchParams = new URLSearchParams(window.location.search);
     const countryCode = searchParams.get("country");
     const API_URL_DETAILS = `https://restcountries.com/v3.1/alpha/${countryCode}`
     const response = await fetch(API_URL_DETAILS);
     const data = await response.json();
+    console.log(data);
+    const borderCountrys = await getBorderCountrysName(data[0].borders)
     countryData = data.map((country) => {
         return {
             name: country.name.common,
@@ -40,11 +63,11 @@ const getCountryDetails = async () => {
             domain: country.tld,
             currencies: Object.values(country.currencies)[0].name,
             languages: Object.values(country.languages).join(", "),
-            borders: country.borders,
+            borders: borderCountrys,
             countryID: country.cca3,
+            coordinates: country.latlng,
         }
     })
-    
     renderCountryDetails(...countryData);
 }
 
