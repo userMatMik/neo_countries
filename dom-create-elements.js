@@ -120,6 +120,21 @@ const createBordersElement = (countryData) => {
     bordersContainerElement.appendChild(bordersWrapperElement);
     return bordersContainerElement;
 }
+
+const createInfoElementWithUnits = (str, value, units) => {
+    const infoDivElement =  document.createElement('div');
+    
+    const labelElement = document.createElement('strong');
+    labelElement.innerText = `${str}: `;
+
+    const valueElement = document.createElement('span');
+    valueElement.innerText = value + ' ' + units ;
+
+    infoDivElement.appendChild(labelElement);
+    infoDivElement.appendChild(valueElement);
+
+    return infoDivElement;
+}
  
 const createDiteailsContainerElement = (countryData) => {
     const detailsContainerElement = document.createElement('div');
@@ -154,6 +169,7 @@ const createDiteailsContainerElement = (countryData) => {
     detailsRightSideContainer.appendChild(createInfoElement("Top level domain", countryData.domain));
     detailsRightSideContainer.appendChild(createInfoElement("Currencies", countryData.currencies));
     detailsRightSideContainer.appendChild(createInfoElement("Languages", countryData.languages));
+    detailsRightSideContainer.appendChild(createInfoElementWithUnits("Area", countryData.area.toLocaleString(), "km\xB2"));
 
 
     detailsFlexContainer.appendChild(detailsLeftSideContainer);
@@ -182,5 +198,4 @@ export const renderCountryDetails = (countryData) => {
     mainElement.appendChild(createGoBackButtonElement());
     mainElement.appendChild(createDiteailsContainerElement(countryData));
     renderMap(countryData.coordinates);
-    console.log(countryData.coordinates)
 }

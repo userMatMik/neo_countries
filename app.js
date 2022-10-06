@@ -8,7 +8,7 @@ const API_URL = "https://restcountries.com/v3.1/all";
 export const fetchData = async () => {
     const response = await fetch(API_URL);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     countriesList = data.map((country) => {
         return {
             name: country.name.common,
@@ -49,7 +49,7 @@ const getCountryDetails = async () => {
     const API_URL_DETAILS = `https://restcountries.com/v3.1/alpha/${countryCode}`
     const response = await fetch(API_URL_DETAILS);
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     const borderCountrys = await getBorderCountrysName(data[0].borders)
     countryData = data.map((country) => {
         return {
@@ -66,6 +66,7 @@ const getCountryDetails = async () => {
             borders: borderCountrys,
             countryID: country.cca3,
             coordinates: country.latlng,
+            area: country.area,
         }
     })
     renderCountryDetails(...countryData);

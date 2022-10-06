@@ -7,8 +7,8 @@
   --bg-clr-dark: #2f3230;
   --font-clr-dark: #c7c3c3;
   --accent-clr-dark: #f252a5;
-  --bs-flag-items-light: 12px 12px 22px #a5a8aa,
-                      -12px -12px 22px #ffffff;
+  --bs-flag-items-light: 10px 10px 14px #a5a8aa,
+                      -10px -10px 14px #ffffff;
   --bs-btn-light: 5px 5px 9px #bfc2c5,
           -5px -5px 9px #ffffff;
   --bs-btn-hover-light: 3px 3px 7px #bfc2c5,
@@ -114,7 +114,7 @@ body {
   font-size: 0.875rem;
   color: var(--text-color);
   background-color: var(--background-clr);
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
 }
 
 .header {
@@ -149,7 +149,7 @@ body {
   font-size: 1rem;
   margin-right: 1rem;
 }
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 500px) {
   .header .switch-label {
     font-size: 0.7rem;
     margin-right: 8px;
@@ -300,7 +300,7 @@ main ul li:hover {
   font-size: 1rem;
   font-weight: 500;
   color: var(--text-color);
-  padding: 10px 25px;
+  padding: 10px 30px;
   box-shadow: var(--box-shadow-btn);
 }
 @media only screen and (max-width: 600px) {
@@ -321,7 +321,7 @@ main ul li:hover {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  left: 5px;
+  left: 10px;
 }
 .filters.hidden {
   display: none;
@@ -427,7 +427,12 @@ main ul li:hover {
   grid-column: 1/3;
   height: 400px;
   width: 100%;
-  box-shadow: var(--box-shadow-country-details);
+  box-shadow: var(--box-shadow-flag);
+}
+@media only screen and (max-width: 768px) {
+  .details-container .map-container {
+    margin-top: 2rem;
+  }
 }
 
 .back-btn {
@@ -549,7 +554,7 @@ main ul li:hover {
   color: var(--text-color);
   background-color: var(--background-clr);
   box-shadow: var(--box-shadow-btn);
-  z-index: 3;
+  z-index: 1000;
   visibility: hidden;
   transition: 0.5s ease;
 }

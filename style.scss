@@ -8,36 +8,36 @@ $accent-clr: #5d42f5;
 
 $clr-pink: #f252a5;
 
-// $bs-list-items: 12px 12px 22px #a5a8aa,
-//                 -12px -12px 22px #ffffff;
+$bs-list-items: 12px 12px 22px #a5a8aa,
+                -12px -12px 22px #ffffff;
 
-// $bs-btn: 5px 5px 9px #bfc2c5,
-//         -5px -5px 9px #ffffff;
+$bs-btn: 5px 5px 9px #bfc2c5,
+        -5px -5px 9px #ffffff;
 
-// $bs-btn-hover: 3px 3px 7px #bfc2c5,
-//                 -3px -3px 7px #ffffff;
+$bs-btn-hover: 3px 3px 7px #bfc2c5,
+                -3px -3px 7px #ffffff;
 
-// $bs-small-inset: inset 2px 2px 5px #bfc2c5,
-//                 inset -2px -2px 5px #ffffff;
+$bs-small-inset: inset 2px 2px 5px #bfc2c5,
+                inset -2px -2px 5px #ffffff;
 
-// $bs-country-details: 8px 8px 14px #bfc2c5,
-//                     -8px -8px 14px #ffffff;
+$bs-country-details: 8px 8px 14px #bfc2c5,
+                    -8px -8px 14px #ffffff;
 
-// $bs-flag-details: 12px 12px 22px #a5a8aa,
-//                 -12px -12px 22px #ffffff;
+$bs-flag-details: 12px 12px 22px #a5a8aa,
+                -12px -12px 22px #ffffff;
 
-// $bs-slider-dot: -2px -2px 8px rgba(255, 255, 255, 1),
-//                 -2px -2px 12px rgba(255, 255, 255, 0.5),
-//                 inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-//                 2px 2px 8px rgba(0, 0, 0, .3);
+$bs-slider-dot: -2px -2px 8px rgba(255, 255, 255, 1),
+                -2px -2px 12px rgba(255, 255, 255, 0.5),
+                inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+                2px 2px 8px rgba(0, 0, 0, .3);
 
-// $bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
-//             -2px -2px 12px rgba(255, 255, 255, 0.5),
-//             inset -2px -2px 8px rgba(255, 255, 255, 1),
-//             inset -2px -2px 12px rgba(255, 255, 255, 0.5),
-//             inset 2px 2px 4px rgba(255, 255, 255, 0.1),
-//             inset 2px 2px 8px rgba(0, 0, 0, .3),
-//             2px 2px 8px rgba(0, 0, 0, .3);
+$bs-slider: -2px -2px 8px rgba(255, 255, 255, 1),
+            -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset -2px -2px 8px rgba(255, 255, 255, 1),
+            inset -2px -2px 12px rgba(255, 255, 255, 0.5),
+            inset 2px 2px 4px rgba(255, 255, 255, 0.1),
+            inset 2px 2px 8px rgba(0, 0, 0, .3),
+            2px 2px 8px rgba(0, 0, 0, .3);
 
 :root {
     --bg-clr-light: #ecf0f3;
@@ -49,8 +49,8 @@ $clr-pink: #f252a5;
     --accent-clr-dark: #f252a5;
 
 
-    --bs-flag-items-light: 12px 12px 22px #a5a8aa,
-                        -12px -12px 22px #ffffff;
+    --bs-flag-items-light: 10px 10px 14px #a5a8aa,
+                        -10px -10px 14px #ffffff;
 
     --bs-btn-light: 5px 5px 9px #bfc2c5,
             -5px -5px 9px #ffffff;
@@ -166,7 +166,7 @@ body {
     font-size: .875rem;
     color: var(--text-color);
     background-color: var( --background-clr);
-    padding-bottom: 2rem;
+    padding-bottom: 3rem;
 }
 
 .header {
@@ -204,7 +204,7 @@ body {
         font-size: 1rem;
         margin-right: 1rem;
 
-        @media only screen and (max-width: 400px) {
+        @media only screen and (max-width: 500px) {
             font-size: 0.7rem;
             margin-right: 8px;
         }
@@ -364,7 +364,7 @@ main {
             font-size: 1rem;
             font-weight: 500;
             color: var(--text-color);
-            padding:10px 25px;
+            padding:10px 30px;
             box-shadow: var(--box-shadow-btn);
 
             @media only screen and (max-width: 600px) {
@@ -380,7 +380,7 @@ main {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            left: 5px;
+            left: 10px;
         }
     }
     &.hidden {
@@ -494,23 +494,16 @@ main {
             }
         }
     }
-    // img {
-    //     width: 100%;
-    //     max-width: 570px;
-    //     // box-shadow: var(--box-shadow-flag);
-
-    //     @media only screen and (max-width: 768px) {    
-    //         display: block;
-    //         margin: 0 auto;
-    //         margin-bottom: 2rem;
-    //     }
-    // }
 
     .map-container {
         grid-column: 1 / 3;
         height: 400px;
         width: 100%;
-        box-shadow: var(--box-shadow-country-details);
+        box-shadow: var(--box-shadow-flag);
+
+        @media only screen and (max-width: 768px) {    
+            margin-top: 2rem;
+        }
     }
 }
 
@@ -646,7 +639,7 @@ main {
     color: var(--text-color);
     background-color: var( --background-clr);
     box-shadow: var(--box-shadow-btn);
-    z-index: 3;
+    z-index: 1000;
     visibility: hidden;
     transition: 0.5s ease;
 
@@ -660,8 +653,3 @@ main {
         transform: translateY(-10px);
     }
 }
-
-
-
-
-
