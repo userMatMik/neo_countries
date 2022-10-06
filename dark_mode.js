@@ -2,7 +2,7 @@ import { updateMap } from "./leaflet_map.js";
 
 export const checkboxElement = document.querySelector('input[type="checkbox"]');
 let theme = localStorage.getItem("themeSettings");
-const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
+export const prefersDarkMode = window.matchMedia("(prefers-color-scheme:dark)").matches;
 
 
 checkboxElement.addEventListener('change', () => {
