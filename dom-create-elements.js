@@ -18,6 +18,7 @@ const createInfoElement = (str, value) => {
 
 const createInfoContainer = (country) => {
     const infoContainerElement = document.createElement('div');
+    infoContainerElement.classList.add('info-container');
 
     const countryNameElement = document.createElement('h2');
     countryNameElement.innerText = country.name
@@ -25,11 +26,14 @@ const createInfoContainer = (country) => {
 
     infoContainerElement.appendChild(countryNameElement);
 
-    infoContainerElement.appendChild(createInfoElement("Capital", country.capital));
-    infoContainerElement.appendChild(createInfoElement("Region", country.region));
-    infoContainerElement.appendChild(createInfoElement("Population", country.population.toLocaleString()));
+    const infoElementsWrapper = document.createElement('div');
+    infoElementsWrapper.classList.add('info-container__wrapper');
 
-    infoContainerElement.classList.add('info-container');
+    infoElementsWrapper.appendChild(createInfoElement("Capital", country.capital));
+    infoElementsWrapper.appendChild(createInfoElement("Region", country.region));
+    infoElementsWrapper.appendChild(createInfoElement("Population", country.population.toLocaleString()));
+
+    infoContainerElement.appendChild(infoElementsWrapper);
 
 
     return infoContainerElement;

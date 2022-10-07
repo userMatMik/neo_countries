@@ -263,10 +263,16 @@ main ul li:hover {
 .info-container {
   padding: 2rem 1.2rem;
 }
+.info-container__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
 .country-name {
-  font-size: 1.2rem;
-  margin-bottom: 0.7rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 .filters {
