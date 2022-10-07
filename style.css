@@ -489,13 +489,14 @@ main ul li:hover {
   font-size: 2rem;
 }
 .country-details__details-container {
-  display: flex;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   margin-top: 1rem;
 }
 @media only screen and (max-width: 1000px) {
   .country-details__details-container {
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 7px;
   }
 }

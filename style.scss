@@ -566,13 +566,14 @@ main {
     }
 
     &__details-container {
-        display: flex;
-        gap: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
         margin-top: 1rem;
 
         @media only screen and (max-width: 1000px) {
             
-            flex-direction: column;
+            grid-template-columns: 1fr;
             gap: 7px;
         }
 
