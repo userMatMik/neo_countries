@@ -88,9 +88,6 @@ For sure I will have to work on accesibility.
 ### Useful resources
 
 - [Tips For Using Async/Await in JavaScript](https://www.youtube.com/watch?v=_9vgd9XKlDQ) - This helped me to understand Promise.all() with Async/Await
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-
 
 ## Author
 
