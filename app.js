@@ -33,13 +33,13 @@ const getBorderCountrysName = async (borders) => {
         const results = await Promise.all(promisesArr)
         const dataPromises = results.map((result) => result.json());
         const finalData = await Promise.all(dataPromises);
-        const borderCountrys = finalData.map((data) => {
+        const borderCountries = finalData.map((data) => {
             return {
                 code: data[0].cca3,
                 name: data[0].name.common,
             }
         })
-        return borderCountrys;
+        return borderCountries;
     }
 }
 

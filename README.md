@@ -52,9 +52,9 @@ Users should be able to:
 
 ### What I learned
 
-I always wanted to create app in neumorphism design style thats why I didnt follow design prepared by FrontendMentor. So the big part of design is my own, hope you like it :)
+I always wanted to create app in more neumorphism design style thats why I didnt follow design prepared by FrontendMentor.
 
-That project was great because I could learn and use JS Routing for countries details pages and Promise.all() for geting all borders countries. Also I spend some time on reading Leaflet documentation and for shure I will be using those maps in my future projects.
+That project was really good to use some more advanced JavaScript features like JS Routing for countries details pages and Promise.all() for geting all borders countries. Also I spend some time on reading Leaflet documentation and for sure I will be using those maps in my future projects.
 
 I also used window.matchMedia() for checking if user use dark mode as his preferred color scheme.
 
@@ -70,13 +70,13 @@ const getBorderCountrysName = async (borders) => {
         const results = await Promise.all(promisesArr)
         const dataPromises = results.map((result) => result.json());
         const finalData = await Promise.all(dataPromises);
-        const borderCountrys = finalData.map((data) => {
+        const borderCountries = finalData.map((data) => {
             return {
                 code: data[0].cca3,
                 name: data[0].name.common,
             }
         })
-        return borderCountrys;
+        return borderCountries;
     }
 }
 ```

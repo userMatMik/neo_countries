@@ -282,7 +282,6 @@ main {
         padding: 0;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        // grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-gap: 3rem;
         list-style: none;
 
@@ -568,8 +567,6 @@ main {
             
             flex-direction: column;
             gap: 7px;
-            box-shadow: var(--box-shadow-btn);
-            padding: 2rem 1rem; 
         }
 
         strong {
@@ -585,8 +582,6 @@ main {
         display: flex;
         flex-direction: column;
         gap: 5px;
-        padding: 1rem;
-        box-shadow: var(--box-shadow-btn);
 
         @media only screen and (max-width: 1000px) {
             
@@ -598,7 +593,7 @@ main {
     }
 
     &__borders {
-        margin-top: 1rem;
+        margin-top: 2rem;
     }
 
     &__borders-title {

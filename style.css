@@ -491,8 +491,6 @@ main ul li:hover {
   .country-details__details-container {
     flex-direction: column;
     gap: 7px;
-    box-shadow: var(--box-shadow-btn);
-    padding: 2rem 1rem;
   }
 }
 .country-details__details-container strong {
@@ -505,8 +503,6 @@ main ul li:hover {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  padding: 1rem;
-  box-shadow: var(--box-shadow-btn);
 }
 @media only screen and (max-width: 1000px) {
   .country-details__details-group {
@@ -517,7 +513,7 @@ main ul li:hover {
   }
 }
 .country-details__borders {
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 .country-details__borders-title {
   font-size: 1.3rem;
